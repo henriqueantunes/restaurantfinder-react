@@ -1,6 +1,7 @@
 # Restaurant Finder React App
 
-This project was created to exemplify an application build using react hooks
+This project was created to exemplify an application build using react hooks.\
+It creates a simple restaurant finder app that has a search functionality with some filters.\
 It uses [Material UI](https://mui.com/) as a component library
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
