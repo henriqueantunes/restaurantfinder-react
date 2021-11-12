@@ -2,37 +2,71 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: sticky;
+  width: 100vw;
+  height: 80px;
+  background-color: #f7f7f7;
+  box-shadow: inset 0 -1px 0 #dcdcdc;
+  top: 0;
+  z-index: 9997;
+  padding: 0;
+  color: #ea1d2c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.restaurants {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.restaurant-card {
+  margin: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header h2 {
+  width: 30%;
+}
+
+.errorMessage {
+  margin: auto;
+  font-weight: bold;
+  color: rgb(161, 15, 15);
+}
+
+.search {
+  justify-content: center;
+  margin-top: 20px;
+  width: 40%;
+}
+
+input[type="submit"] {
+  padding: 5px;
+  background-color: white;
+  color: #ea1d2c;
+  border: 1px solid #ea1d2c;
+  width: 80px;
+  margin-left: 15px;
+  cursor: pointer;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.search > input[type="text"] {
+  width: 50%;
+  min-width: 200px;
+  height: 35px;
+  border: white;
+  border-radius: 10px;
+}
+
+.filter-component {
+  width: 22%;
+  margin: 10px;
 }
