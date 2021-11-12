@@ -29,7 +29,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        errorMessage: action.error,
+        errorMessage: action.error.toString(),
       };
     default:
       return state;
@@ -54,6 +54,9 @@ const App = () => {
   useEffect(() => {
     filters.restaurantName = restaurantName;
     fetchRestaurants(filters);
+    dispatch({
+      type: "SEARCH_REQUEST",
+    });
   }, [restaurantName, filters]);
 
   const fetchRestaurants = (filters) => {
@@ -77,7 +80,13 @@ const App = () => {
           })
         );
       }
-    });
+    }).catch(error => {
+        dispatch({
+          type: "SEARCH_FAILURE",
+          error: "Backend is probably down",
+        })
+      }
+    );
   };
 
   const { restaurants, errorMessage, loading } = state;
@@ -90,7 +99,7 @@ const App = () => {
         {loading && !errorMessage ? (
           <LinearProgress sx={{ width: "100%", height: "10px" }} />
         ) : errorMessage ? (
-          <div className="errorMessage">Error</div>
+          <div className="errorMessage">{errorMessage}</div>
         ) : (
           restaurants.map((restaurant, index) => (
             <div key={`${index}-${restaurant.restaurantName}`} className="restaurant-card">

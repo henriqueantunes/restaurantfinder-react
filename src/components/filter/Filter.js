@@ -19,7 +19,8 @@ const FilterHeader = (props) => {
   useEffect(() => {
     fetch("http://localhost:8080/getCuisines")
       .then((response) => response.json())
-      .then((data) => setCuisines(data));
+      .then((data) => setCuisines(data))
+      .catch(e => setCuisines([]));
   }, []);
 
   const updateFiltersCallback = () => {
