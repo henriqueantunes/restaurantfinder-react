@@ -60,9 +60,9 @@ Note that the docker build, builds the app in production mode, so depending on t
 #### Docker Hub
 
 You can also download the latest working image from my personal docker hub:\
-`docker pull henriqueantuness/restaurantfinder-react:1.0.0`
+`docker pull henriqueantuness/restaurantfinder-react:1.0.1`
 
 And run it on docker:
-`docker run -p 8080:8080 henriqueantuness/restaurantfinder-react:1.0.0`
+`docker run -p 8080:8080 henriqueantuness/restaurantfinder-react:1.0.1`
 
 the docker hub image is pointing to the azure's deployed backend at the address http://restaurantfinder-kotlin.azurewebsites.net/
