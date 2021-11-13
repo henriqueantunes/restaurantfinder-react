@@ -6,6 +6,8 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { debounce } from "lodash";
 
+const { REACT_APP_BACKEND_URL } = process.env;
+
 // Filter header that contains the filter options for customer rating, distance, price and cuisine
 // filter is automatically applyed upon changes
 const FilterHeader = (props) => {
@@ -17,7 +19,7 @@ const FilterHeader = (props) => {
 
   // Fetch cuisine data on component startup
   useEffect(() => {
-    fetch("http://localhost:8080/getCuisines")
+    fetch(REACT_APP_BACKEND_URL + "/getCuisines")
       .then((response) => response.json())
       .then((data) => setCuisines(data))
       .catch(e => setCuisines([]));

@@ -6,6 +6,10 @@ It uses [Material UI](https://mui.com/) as a component library
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Demo
+Azure deployed live [demo](https://restaurantfinder-react.azurewebsites.net/) \
+Since its hosted in a free tier Azure container, the application may take some time to startup
+
 ## Building and Running the APP
 
 In the project directory, you can run:
@@ -41,3 +45,24 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+### Docker support
+Alternatively, a Dockerfile is available in the project's root folder and it can be run with the following commands.
+
+create a docker image running:\
+`docker build -t henrique/restaurantfinder-react .`
+
+run the docker container:\
+`docker run -p 3000:3000 henrique/restaurantfinder-react`
+
+Note that the docker build, builds the app in production mode, so depending on the URL of your backend you will need to alter the `env.production` variable
+
+#### Docker Hub
+
+You can also download the latest working image from my personal docker hub:\
+`docker pull henriqueantuness/restaurantfinder-react:1.0.0`
+
+And run it on docker:
+`docker run -p 8080:8080 henriqueantuness/restaurantfinder-react:1.0.0`
+
+the docker hub image is pointing to the azure's deployed backend at the address http://restaurantfinder-kotlin.azurewebsites.net/

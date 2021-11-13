@@ -5,6 +5,8 @@ import Restaurant from "./restaurant/Restaurant";
 import FilterHeader from "./filter/Filter";
 import LinearProgress from "@mui/material/LinearProgress";
 
+const { REACT_APP_BACKEND_URL } = process.env;
+
 const initialState = {
   loading: true,
   restaurants: [],
@@ -60,7 +62,7 @@ const App = () => {
   }, [restaurantName, filters]);
 
   const fetchRestaurants = (filters) => {
-    fetch(`http://localhost:8080/findRestaurants`, {
+    fetch(REACT_APP_BACKEND_URL + `/findRestaurants`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(filters),
