@@ -53,18 +53,18 @@ const Restaurant = ({ restaurant, badgeNumber }) => {
             <GreenStyledRating
               sx={{ width: "100%", marginBottom: "15px" }}
               readOnly
-              name="distance"
+              name="price"
               precision={0.1}
-              value={restaurant.distance / 5}
+              value={restaurant.price / 10}
               icon={<MonetizationOnIcon fontSize="inherit" />}
               emptyIcon={<MonetizationOnIcon fontSize="inherit" />}
             />
             <BlackStyledRating
               sx={{ width: "100%" }}
               readOnly
-              name="price"
+              name="distance"
               precision={0.1}
-              value={restaurant.price / 10}
+              value={restaurant.distance / 2}
               icon={<DirectionsCarIcon fontSize="inherit" />}
               emptyIcon={<DirectionsCarIcon fontSize="inherit" />}
             />
